@@ -36,12 +36,13 @@ public class ProduitMockServiceImpl implements IProduitService {
 		produits.add(prd);
 	}
 
+
 	@Override
-	public void deleteProduit(String ref) {
-		String reff = "";
+	public void deleteProduit(Long id) {
+		Long idProduit = (long) 0;
 		for (int i = 0; i < produits.size(); i++) {
-			reff = produits.get(i).getRef();
-			if(reff.equals(ref)) {
+			idProduit = produits.get(i).getId();
+			if(idProduit.equals(id)) {
 				produits.remove(produits.get(i));
 				break;
 			}
